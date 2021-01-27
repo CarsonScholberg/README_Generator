@@ -34,28 +34,50 @@ function generateMarkdown(data) {
   let userBadge = renderGithubLink(data.github)
   return `# ${data.title}
 
-${userBadge}
+${userBadge} ${licenseBadge}
 
 ## Description
 
 ${data.description}
 
-## Installation Instructions
+## Table of Contents 
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+
+## Installation
 
 ${data.install}
 
-## Use Case Scenarios
+## Usage
 
 ${data.usage}
 
-##Contributors
+## Credits
 
 ${data.contributing}
 
-## License Agreement
+## License
 
 ${licenseBadge}
 
+## Tests
+
+${data.test}
+
+## Questions
+
+Any questions or concerns please contact me at:
+
+${data.email}
+
+${userBadge}
+
+---
+
+© 2021 Carson Scholberg Services, LLC, Inc. brand. Confidential and Proprietary. All Rights Reserved.
 
 ![Nice Picture](https://media.wired.com/photos/5f87340d114b38fa1f8339f9/master/w_1600%2Cc_limit/Ideas_Surprised_Pikachu_HD.jpg' "Pikachu")
 `;

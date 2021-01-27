@@ -11,6 +11,20 @@ const questions = [
         message: "Tell me your Github Username"
     },
     {
+        type: 'input',
+        name: 'email',
+        message: 'Please enter your email: ',
+        validate: function(email){
+            if(email == '' || email == null || email == undefined){
+                console.log("\nPlease enter a valid email.")
+            } else if (email.includes('@') === false || email.includes('.edu') === false){
+                console.log("\nValid emails include @ and .com")
+            }else {
+                return true;
+            }
+        }
+    },
+    {
         type: "input",
         name: "title",
         message: "What is the title of your project? "
@@ -33,6 +47,10 @@ const questions = [
     {
         name: "contributing",
         message: "What developers contributed in this project? "
+    },
+    {
+        name:"test",
+        message: "Enter any test environments that you included in your project: "
     },
     {
         type: "list",
