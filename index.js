@@ -6,6 +6,11 @@ const fs = require("fs")
 // TODO: Create an array of questions for user input
 const questions = [
     {
+        type: 'input',
+        name: 'github',
+        message: "Tell me your Github Username"
+    },
+    {
         type: "input",
         name: "title",
         message: "What is the title of your project? "
@@ -16,10 +21,24 @@ const questions = [
         message: "Write a short description about your project: "
     },
     {
+        type: "input",
+        name: "install",
+        message: "Give me the instructions on how to install your project: "
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "What are some use case scenarios? "
+    },
+    {
+        name: "contributing",
+        message: "What developers contributed in this project? "
+    },
+    {
         type: "list",
         name: "license",
         message: "What license are you using?",
-        choices: ["GNU", "Apache", "MIT"]
+        choices: ["GNU", "Apache", "MIT", 'None']
     }
 ];
 
@@ -38,6 +57,10 @@ function init() {
             writeToFile('README.md', generateMD(response))
         })
 }
+
+// var obj ={
+//     key: "value"
+// }
 
 // Function call to initialize app
 init();
